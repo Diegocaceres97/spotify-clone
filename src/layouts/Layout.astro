@@ -1,6 +1,8 @@
 ---
+import { Player } from '@/components/Player';
 import AsideMenu from '../components/AsideMenu.astro';
 import { ViewTransitions } from 'astro:transitions';
+import type { transition } from '@ionic/core/dist/types/utils/transition';
 
 interface Props {
   title: string;
@@ -32,7 +34,7 @@ const { title } = Astro.props;
 
 
 	  <footer class="[grid-area:player]  min-h-[100px]">
-		PLAYER
+		<Player client:load transition.name="media-player" transition:persist />
 	  </footer>
     </div>
    
